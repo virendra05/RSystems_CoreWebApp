@@ -1,27 +1,67 @@
-# CoreWebApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+# Application Setup and Running Guide
 
-## Development server
+## Prerequisites
+3. **Node.js** - Install the 16.x version of Node.js which includes npm. This is required to run the Angular front-end.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+4. **Angular CLI** - Install Angular CLI globally using npm:
+   ```
+   npm install -g @angular/cli@16
+   ```
 
-## Code scaffolding
+## Setup Instructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. **Clone** - Open Visual Studio 2022 > Click on "Clone a repository" > Add Repository Location as: "https://github.com/virendra05/RSystems_CoreWebApp.git" > Specify the folder path
 
-## Build
+3. **Open Frontend Project**:
+   - Open Visual Studio Code > File > Open Folder > from the cloned repository location Open CoreWebApp Angular Project
+   - Open the terminal in Visual Studio Code
+   - Run the following command to install dependencies:
+     ```
+     npm install
+     ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How to Run the Application
 
-## Running unit tests
+1. **Running the Angular Frontend**:
+   - In Visual Studio Code, open the terminal.
+   - Navigate to the Angular project directory (CoreWebApp).
+   - Start the Angular application by running:
+     ```
+     npm start
+     ```
+   - Access the frontend by navigating to `http://localhost:4200` in a web browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+COREWEBAPP
+├── .angular
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   ├── assets
+│   │   └── .gitkeep
+│   ├── employeeList
+│   │   ├── employeeList.component.html
+│   │   ├── employeeList.component.scss
+│   │   └── employeeList.component.ts
+│   ├── models
+│   │   └── employee.model.ts
+│   ├── services
+│   │   └── employee.service.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.scss
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```
