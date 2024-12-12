@@ -1,0 +1,39 @@
+<div class="dialog-button">
+    <button mat-raised-button class="open-form-button primary-button" (click)="openDialog()">New</button>
+  </div>
+  
+  
+  <app-employeeList [refreshDataEvent]="refreshEvent" (editEvent)="editEmployee($event)"></app-employeeList>
+  
+  <ng-template #employeeForm>
+    <h2 mat-dialog-title>Add Employee</h2>
+    <mat-dialog-content [formGroup]="form">
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+      </div>
+  
+    </mat-dialog-content>
+  
+    <mat-dialog-actions class="form-actions" align="center">
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+    </mat-dialog-actions>
+  </ng-template>
+  

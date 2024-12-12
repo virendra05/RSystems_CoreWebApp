@@ -13,13 +13,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
-import { EmployeeListComponent } from '../employeeList/employeeList.component';
+import { EmployeeListComponent } from './employeeList/employeeList.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { EmployeeFormComponentComponent } from './employee-form-component/employee-form-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeFormComponentComponent
   ],
   imports: [
     BrowserModule,

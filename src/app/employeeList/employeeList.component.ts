@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { ApiResponse, GetEmployees } from '../models/employee.model';
-import { EmployeeService } from '../services/employee.service';
+import { ApiResponse, GetEmployees } from '../../models/employee.model';
+import { EmployeeService } from '../../services/employee.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {  PageEvent } from '@angular/material/paginator';
 
@@ -19,7 +19,7 @@ export class EmployeeListComponent implements OnInit {
   sortOrder: number = 1; 
   pageIndex: number = 1;
   pageSize: number = 10;
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'phoneNumber','edit', 'delete'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'edit', 'delete'];
   @Output() editEvent = new EventEmitter<GetEmployees>();
 
   constructor(private employeeService: EmployeeService, private snackBar: MatSnackBar) { }
@@ -47,6 +47,9 @@ export class EmployeeListComponent implements OnInit {
             this.totalPages=data.totalPages;
             this.totalRecords=data.totalRecords;
           } else {
+            if(this.employees.length>0){
+              this.employees=[];
+            }
             this.snackBar.open('No data available.', 'Close', { duration: 5000 });
           }
         },
