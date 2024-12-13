@@ -16,6 +16,7 @@ export class EmployeeFormComponentComponent implements OnInit {
   @ViewChild(EmployeeListComponent) employeeListComponent!: EmployeeListComponent;
 
   form!: FormGroup;
+  isUpdate:boolean=true;
   refreshEvent: number = 0;
   @ViewChild('employeeForm') employeeForm!: TemplateRef<any>;
 
@@ -27,12 +28,18 @@ export class EmployeeFormComponentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.form = this.fb.group({
       id: [''],
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
     });
+  }
+
+  onAddNewEmployee():void{
+    this.isUpdate=true;
+    this.openDialog();
   }
 
   openDialog(): void {
@@ -67,6 +74,7 @@ export class EmployeeFormComponentComponent implements OnInit {
   }
 
   editEmployee(employee: GetEmployees): void {
+    this.isUpdate=false;
     this.form.patchValue(employee);
     this.openDialog();
   }
